@@ -10,3 +10,7 @@
     );
     numbersDiv.textContent = randomNumbers.join(" - ");
     console.log("Numeri generati:", randomNumbers);
+
+    // Metto il numero specifica che mi serve e che mi è stato richiesto
+    let timeLeft = 30;
+    timerDiv.textContent = `Tempo rimanente: ${timeLeft}s`;
