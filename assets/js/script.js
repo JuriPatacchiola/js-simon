@@ -48,7 +48,7 @@
       inputsDiv.appendChild(document.createElement("br"));
       inputsDiv.appendChild(button);
     
-    }
+}
 
     // Creo la funzione che controlla l'imput 
     function checkAnswers() {
@@ -58,5 +58,19 @@
 
       const guessed = userNumbers.filter(num => randomNumbers.includes(num));
       const uniqueGuessed = [...new Set(guessed)];
+
+
+    // Mostro i risultati a schermo
+    resultDiv.innerHTML = `
+        <p>Hai indovinato ${uniqueGuessed.length} numero/i su 5.</p>
+        <p>Numeri corretti: ${uniqueGuessed.join(", ") || "Nessuno 😅"}</p>
+        <p>I numeri originali erano: ${randomNumbers.join(", ")}</p>
+    `;
+
+    // Mostro anche i risultati nella console
+    console.log("Numeri inseriti dall’utente:", userNumbers);
+    console.log("Numeri corretti:", uniqueGuessed);
+    console.log(`Hai indovinato ${uniqueGuessed.length} su 5`);
+    console.log("Numeri originali:", randomNumbers);
     
-    }
+}
