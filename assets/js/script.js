@@ -25,3 +25,12 @@
         startGuessPhase();
       }
     }, 1000);
+
+     // creo la funzione per rimuove i numeri
+    function startGuessPhase() {
+      
+      numbersDiv.textContent = "";
+      timerDiv.textContent = "";
+    
+    
+    }
