@@ -26,11 +26,19 @@
       }
     }, 1000);
 
-     // creo la funzione per rimuove i numeri
+    // creo la funzione per rimuove i numeri
     function startGuessPhase() {
       
       numbersDiv.textContent = "";
       timerDiv.textContent = "";
     
+    // Creo un ciclo for per i miei 5 input
+      for (let i = 0; i < 5; i++) {
+        const input = document.createElement("input");
+        input.type = "number";
+        input.min = 1;
+        input.max = 99;
+        inputsDiv.appendChild(input);
+      }
     
     }
