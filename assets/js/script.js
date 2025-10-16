@@ -49,3 +49,14 @@
       inputsDiv.appendChild(button);
     
     }
+
+    // Creo la funzione che controlla l'imput 
+    function checkAnswers() {
+      const userNumbers = Array.from(inputsDiv.querySelectorAll("input"))
+        .map(input => parseInt(input.value))
+        .filter(num => !isNaN(num));
+
+      const guessed = userNumbers.filter(num => randomNumbers.includes(num));
+      const uniqueGuessed = [...new Set(guessed)];
+    
+    }
