@@ -40,5 +40,12 @@
         input.max = 99;
         inputsDiv.appendChild(input);
       }
+
+    // Aggiungo un bottone per confermare e che fa la verifica
+      const button = document.createElement("button");
+      button.textContent = "Verifica";
+      button.onclick = checkAnswers;
+      inputsDiv.appendChild(document.createElement("br"));
+      inputsDiv.appendChild(button);
     
     }
