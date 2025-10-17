@@ -51,3 +51,22 @@ function iniziaGioco() {
     }
   }, 1000);
 }
+
+// Dopo 30s, mostra 5 input per scrivere i numeri
+function mostraInput() {
+  document.getElementById("numbers").textContent = "";
+  let div = document.getElementById("inputs");
+  div.innerHTML = "";
+
+  for (let i = 0; i < 5; i++) {
+    let input = document.createElement("input");
+    input.type = "number";
+    input.placeholder = "--";
+    div.appendChild(input);
+  }
+
+  let bottone = document.createElement("button");
+  bottone.textContent = "Controlla";
+  bottone.onclick = controllaRisposte;
+  div.appendChild(bottone);
+}
