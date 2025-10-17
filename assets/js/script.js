@@ -70,3 +70,42 @@ function mostraInput() {
   bottone.onclick = controllaRisposte;
   div.appendChild(bottone);
 }
+
+// Controlla i numeri inseriti
+function controllaRisposte() {
+  let inputs = document.getElementById("inputs").getElementsByTagName("input");
+  let numeriUtente = [];
+  let trovati = [];
+
+  // Leggo i numeri scritti dall’utente
+  for (let i = 0; i < inputs.length; i++) {
+    let valore = inputs[i].value;
+    if (valore !== "") {
+      numeriUtente.push(parseInt(valore));
+    }
+  }
+
+  // Controllo se i numeri dell’utente sono tra quelli giusti
+  for (let i = 0; i < numeriUtente.length; i++) {
+    let numero = numeriUtente[i];
+
+    // Se il numero è tra quelli giusti e non è già stato trovato, aggiungilo
+    if (numeriCasuali.includes(numero) && !trovati.includes(numero)) {
+      trovati.push(numero);
+    }
+  }
+ // Mostro il risultato
+  let messaggio = "Hai indovinato " + trovati.length + " su 5. ";
+  if (trovati.length > 0) {
+    messaggio = messaggio + "Numeri corretti: " + trovati.join(", ");
+  } else {
+    messaggio = messaggio + "Nessuno 😅";
+  }
+
+  document.getElementById("result").textContent = messaggio;
+
+  // Mostro anche tutto sulla console
+  console.log("Numeri inseriti:", numeriUtente);
+  console.log("Numeri trovati:", trovati);
+  console.log("Numeri giusti:", numeriCasuali);
+}
