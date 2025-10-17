@@ -19,3 +19,13 @@ function generaNumeri() {
     }
   }
 }
+
+
+// Mostra i numeri a schermo
+function mostraNumeri() {
+  let testo = "";
+  for (let i = 0; i < numeriCasuali.length; i++) {
+    testo = testo + numeriCasuali[i] + " ";
+  }
+  document.getElementById("numbers").textContent = testo.trim();
+}
