@@ -29,3 +29,25 @@ function mostraNumeri() {
   }
   document.getElementById("numbers").textContent = testo.trim();
 }
+
+// Avvia il gioco e il timer
+function iniziaGioco() {
+  generaNumeri();
+  mostraNumeri();
+  console.log("Numeri da ricordare:", numeriCasuali);
+
+  document.getElementById("result").textContent = "";
+  document.getElementById("inputs").innerHTML = "";
+
+  tempo = 30;
+  document.getElementById("timer").textContent = "Tempo: " + tempo + "s";
+
+  intervallo = setInterval(function() {
+    tempo = tempo - 1;
+    document.getElementById("timer").textContent = "Tempo: " + tempo + "s";
+    if (tempo === 0) {
+      clearInterval(intervallo);
+      mostraInput();
+    }
+  }, 1000);
+}
